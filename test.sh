@@ -4,6 +4,7 @@ source ./lib/common.sh
 
 echo "*** Email:"
 echo "Subject: $SUBJECT"
+echo
 cat $BODYFILE | head -n 5
 if [ ! -z "`cat $BODYFILE | tail -n +6`" ]; then
 	echo "(...)"
