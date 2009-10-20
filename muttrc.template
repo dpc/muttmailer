@@ -1,0 +1,3 @@
+my_hdr From: important@institution.org (Important Institution)
+set smtp_url="smtp://login:password@smtpserver"
+set copy=no
