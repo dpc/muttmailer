@@ -13,7 +13,7 @@ Setup the account (only first time):
 
 Create a directory for your mail:
 
-	$ mkdir mails/test/attach
+	$ mkdir -p mails/test/attach
 
 Put a subject in:
 
@@ -37,7 +37,7 @@ Test your setup:
 
 	$ ./test.sh
 
-Go one and start mailing:
+Start mailing:
 
 	$ ./send.sh
 
@@ -57,3 +57,5 @@ or schedule it:
 
 * Only one scheduled job is possible at the moment.
 * Lists format is very strict and should really be prepared by `format-list.sh` tool.
+
+For more documentation - please read the source.
