@@ -2,16 +2,17 @@
 
 source ./lib/common.sh
 
-echo "*** Email:"
+BREAKLINE="$(tput setaf 1)***$(tput sgr0)"
+echo "$BREAKLINE Email:"
 echo "Subject: $SUBJECT"
 echo
-cat $BODYFILE | head -n 5
-if [ ! -z "`cat $BODYFILE | tail -n +6`" ]; then
+cat $BODYFILE | head -n 8
+if [ ! -z "`cat $BODYFILE | tail -n +9`" ]; then
 	echo "(...)"
 fi
 
 echo
-echo "*** Attachments:"
+echo "$BREAKLINE Attachments:"
 if [ -d "$ATTACHDIR" ]; then
 	if [ ! -z "`ls $ATTACHDIR/`" ]; then
 		for i in $ATTACHDIR/*; do
@@ -25,10 +26,10 @@ else
 fi
 
 echo
-echo "*** To: "
+echo "$BREAKLINE To: "
 cat $LISTFILE | head -n 5
 if [ ! -z "`cat $LISTFILE | tail -n +6`" ]; then
-	echo -n "(...) `cat $LISTFILE | wc -l` in total "
+	echo -n "(...) $(tput setaf 1)`cat $LISTFILE | wc -l`$(tput sgr0) in total "
 fi
 echo "from $LISTFILE"
 
